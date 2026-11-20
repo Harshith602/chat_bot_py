@@ -1,0 +1,731 @@
+PROGRAMMING KNOWLEDGE BASE
+Python, Java and C
+For a Streamlit + Groq programming chatbot
+
+PURPOSE
+This file is a compact reference dataset for a programming assistant. It contains
+beginner-friendly explanations, syntax, examples, common mistakes and basic
+programming concepts. It is reference material, not an executable program.
+
+============================================================
+SECTION 1 — GENERAL PROGRAMMING FUNDAMENTALS
+============================================================
+
+1. What is programming?
+Programming is the process of writing instructions that a computer can execute
+to perform tasks, process information or solve problems.
+
+2. What is an algorithm?
+An algorithm is a finite sequence of clear steps for solving a problem.
+Example: to find the larger of two numbers:
+- Read A and B.
+- If A is greater than B, print A.
+- Otherwise, print B.
+
+3. What is a variable?
+A variable is a named place used by a program to refer to a value.
+Examples:
+Python: age = 20
+Java:   int age = 20;
+C:      int age = 20;
+
+4. Common data types
+- Integer: whole numbers, such as 10 or -4.
+- Floating-point: decimal numbers, such as 3.14.
+- Character: a single character, such as 'A'.
+- String: text, such as "Hello".
+- Boolean: true/false values (language spelling differs).
+
+5. Operators
+Arithmetic: +, -, *, /, %
+Comparison: ==, !=, <, >, <=, >=
+Logical:
+- Python: and, or, not
+- Java:   &&, ||, !
+- C:      &&, ||, !
+
+Assignment: =, +=, -=, *=, /=
+Note: = assigns a value. == compares two values.
+
+6. Control flow
+Conditional statements choose which code runs.
+Loops repeat code:
+- for loop: often used when the number of repetitions is known.
+- while loop: repeats while a condition remains true.
+- break: exits a loop.
+- continue: skips to the next iteration.
+
+7. Functions and methods
+A function is a reusable block of code. It can accept inputs (parameters)
+and return a result. In Java, functions defined inside classes are called
+methods.
+
+8. Arrays and collections
+An array stores multiple values, commonly of the same type.
+A list or other collection can provide more flexible storage.
+Indexes commonly start at zero.
+
+9. Debugging
+Debugging means finding and fixing defects in a program.
+A useful process:
+- Read the complete error message.
+- Identify the file and line number.
+- Check spelling, punctuation, types and variable values.
+- Reduce the problem to a small example.
+- Fix one issue at a time and test again.
+
+10. Big-O basics
+Big-O describes how an algorithm's resource use grows as input size grows.
+- O(1): constant time.
+- O(log n): logarithmic time.
+- O(n): linear time.
+- O(n log n): common efficient sorting complexity.
+- O(n^2): quadratic time, often from nested loops.
+Actual performance also depends on implementation and hardware.
+
+============================================================
+SECTION 2 — PYTHON
+============================================================
+
+1. What is Python?
+Python is a high-level, general-purpose programming language known for
+readable syntax. It is widely used in automation, web development, data
+analysis, artificial intelligence and scripting.
+
+2. Printing output
+    print("Hello, World!")
+    print(10 + 20)
+
+3. Variables and data types
+    name = "Anu"       # str
+    age = 21           # int
+    height = 5.6       # float
+    is_student = True  # bool
+
+Python assigns types dynamically. You do not normally declare a variable's
+type before assigning a value.
+
+4. Taking input
+    name = input("Enter your name: ")
+    print("Hello", name)
+
+input() returns text. Convert it when a number is required:
+    age = int(input("Enter age: "))
+    price = float(input("Enter price: "))
+
+5. Type conversion
+    number = int("42")
+    decimal = float("3.5")
+    text = str(100)
+
+6. Conditional statements
+    score = 75
+    if score >= 90:
+        print("A grade")
+    elif score >= 60:
+        print("Pass")
+    else:
+        print("Try again")
+
+Python uses indentation to define blocks.
+
+7. for loop
+    for number in range(1, 6):
+        print(number)
+
+range(1, 6) generates 1, 2, 3, 4, 5. The stop value is excluded.
+
+8. while loop
+    count = 1
+    while count <= 5:
+        print(count)
+        count += 1
+
+Make sure a while-loop condition can eventually become false, or the loop
+may run forever.
+
+9. Functions
+    def add(a, b):
+        return a + b
+
+    result = add(10, 20)
+    print(result)
+
+10. Lists
+    fruits = ["apple", "banana", "mango"]
+    fruits.append("orange")
+    print(fruits[0])
+    print(len(fruits))
+
+List indexes start at zero. Index 0 refers to the first item.
+
+11. Tuples
+    point = (10, 20)
+    print(point[0])
+
+Tuples are immutable: their elements cannot be reassigned after creation.
+
+12. Dictionaries
+    student = {"name": "Ravi", "age": 20}
+    print(student["name"])
+    student["age"] = 21
+
+Dictionaries store key-value pairs.
+
+13. Sets
+    values = {1, 2, 2, 3}
+    print(values)
+
+A set stores unique elements and does not provide ordinary positional indexing.
+
+14. String operations
+    text = "Python Programming"
+    print(text.lower())
+    print(text.upper())
+    print(text.replace("Python", "Java"))
+    print(text[0:6])
+
+15. List comprehension
+    squares = [n * n for n in range(1, 6)]
+    print(squares)
+
+16. Exception handling
+    try:
+        number = int(input("Enter a number: "))
+        print(100 / number)
+    except ValueError:
+        print("Please enter a valid integer.")
+    except ZeroDivisionError:
+        print("Cannot divide by zero.")
+
+Exceptions should be handled specifically where possible. Avoid hiding all
+errors with a broad except clause unless there is a clear reason.
+
+17. File handling
+    with open("notes.txt", "w", encoding="utf-8") as file:
+        file.write("Hello from Python")
+
+    with open("notes.txt", "r", encoding="utf-8") as file:
+        content = file.read()
+        print(content)
+
+Common file modes:
+- "r": read.
+- "w": write, replacing existing content.
+- "a": append.
+- "x": create a new file and fail if it already exists.
+
+18. Classes and objects
+    class Student:
+        def __init__(self, name):
+            self.name = name
+
+        def introduce(self):
+            print("My name is", self.name)
+
+    student = Student("Maya")
+    student.introduce()
+
+A class defines a type of object. An object is an instance of a class.
+__init__ initializes a new instance. self refers to the current instance.
+
+19. Modules
+    import math
+    print(math.sqrt(25))
+
+A module is a Python file or package that provides reusable code.
+
+20. Common Python errors
+- SyntaxError: invalid Python syntax; check colons, brackets and indentation.
+- IndentationError: inconsistent or missing indentation.
+- NameError: a name is used before it is defined or is misspelled.
+- TypeError: an operation is used with an incompatible type.
+- ValueError: a value has the right general type but an invalid value.
+- IndexError: a sequence index is outside its valid range.
+- KeyError: a dictionary key does not exist.
+- ZeroDivisionError: division by zero.
+- ModuleNotFoundError: a module cannot be found; check its package name,
+  installation and active Python environment.
+
+21. Installing packages
+    python -m pip install package_name
+
+Using python -m pip helps install into the Python environment associated
+with that Python command.
+
+============================================================
+SECTION 3 — JAVA
+============================================================
+
+1. What is Java?
+Java is a general-purpose, class-based programming language. Java source
+code is compiled to bytecode and commonly runs on the Java Virtual Machine
+(JVM).
+
+2. Basic Java program
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+
+The public class name must match the filename when using a public top-level
+class. For this example, save the file as Main.java.
+
+3. Variables and data types
+    int age = 20;
+    double price = 19.99;
+    char grade = 'A';
+    boolean active = true;
+    String name = "Ravi";
+
+Common primitive types include byte, short, int, long, float, double,
+char and boolean. String is a class, not a primitive type.
+
+4. Output
+    System.out.println("Hello");
+    System.out.print("Same line");
+
+println prints a line and then moves to the next line. print does not add
+a newline automatically.
+
+5. Input with Scanner
+    import java.util.Scanner;
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Enter age: ");
+            int age = input.nextInt();
+            System.out.println("Age: " + age);
+            input.close();
+        }
+    }
+
+When mixing nextInt() and nextLine(), remember nextInt() leaves the line
+separator behind. A following nextLine() may consume that remainder.
+Consume the leftover line when appropriate.
+
+6. Conditional statements
+    int marks = 75;
+    if (marks >= 90) {
+        System.out.println("A grade");
+    } else if (marks >= 60) {
+        System.out.println("Pass");
+    } else {
+        System.out.println("Try again");
+    }
+
+7. for loop
+    for (int i = 1; i <= 5; i++) {
+        System.out.println(i);
+    }
+
+8. while loop
+    int i = 1;
+    while (i <= 5) {
+        System.out.println(i);
+        i++;
+    }
+
+9. Methods
+    public class Main {
+        static int add(int a, int b) {
+            return a + b;
+        }
+
+        public static void main(String[] args) {
+            System.out.println(add(10, 20));
+        }
+    }
+
+A method's return type describes the value it returns. void means it
+does not return a value.
+
+10. Arrays
+    int[] numbers = {10, 20, 30};
+    System.out.println(numbers[0]);
+    System.out.println(numbers.length);
+
+Java array sizes are fixed after creation. Array indexes start at zero.
+
+11. Strings
+    String language = "Java";
+    System.out.println(language.length());
+    System.out.println(language.toUpperCase());
+    System.out.println(language.equals("Java"));
+
+Use equals() to compare String contents. The == operator compares object
+references, not String content in the general case.
+
+12. ArrayList
+    import java.util.ArrayList;
+
+    ArrayList<String> names = new ArrayList<>();
+    names.add("Asha");
+    names.add("Ravi");
+    System.out.println(names.get(0));
+    System.out.println(names.size());
+
+ArrayList is a resizable collection. It stores objects; use wrapper types
+such as Integer rather than primitive int as its generic type.
+
+13. Classes and objects
+    class Student {
+        String name;
+
+        Student(String name) {
+            this.name = name;
+        }
+
+        void introduce() {
+            System.out.println("My name is " + name);
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Student s = new Student("Maya");
+            s.introduce();
+        }
+    }
+
+A constructor initializes an object. It has the class name and no return type.
+
+14. Four common OOP principles
+- Encapsulation: keep data and related methods together; control access.
+- Inheritance: create a class based on another class.
+- Polymorphism: use a common interface or parent type for different forms.
+- Abstraction: expose essential behavior while hiding implementation details.
+
+15. Inheritance
+    class Animal {
+        void sound() {
+            System.out.println("Animal sound");
+        }
+    }
+
+    class Dog extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Bark");
+        }
+    }
+
+16. Exception handling
+    try {
+        int result = 10 / 0;
+    } catch (ArithmeticException e) {
+        System.out.println("Cannot divide by zero");
+    } finally {
+        System.out.println("Finished");
+    }
+
+finally is commonly used for cleanup. Java also supports checked exceptions,
+which may need to be caught or declared with throws.
+
+17. Common Java errors
+- cannot find symbol: a variable, method or class name cannot be resolved.
+- ';' expected: a statement may be missing a semicolon.
+- incompatible types: a value cannot be assigned or converted to the target type.
+- NullPointerException: code tried to use a null reference.
+- ArrayIndexOutOfBoundsException: an array index is invalid.
+- NumberFormatException: text could not be parsed as the requested number.
+- ClassNotFoundException: a requested class could not be found at runtime.
+- Main class not found: check the class name, package, classpath and build output.
+
+18. Compile and run
+    javac Main.java
+    java Main
+
+Use a compatible JDK installation. Check java -version and javac -version
+if the commands are not recognized.
+
+============================================================
+SECTION 4 — C PROGRAMMING
+============================================================
+
+1. What is C?
+C is a procedural, compiled programming language widely used for systems
+programming, embedded software and performance-sensitive applications.
+
+2. Basic C program
+    #include <stdio.h>
+
+    int main(void) {
+        printf("Hello, World!\n");
+        return 0;
+    }
+
+stdio.h declares standard input/output functions such as printf and scanf.
+main is the program entry point. Returning 0 conventionally indicates success.
+
+3. Variables and data types
+    int age = 20;
+    float price = 10.5f;
+    double distance = 123.456;
+    char grade = 'A';
+
+Common types include char, int, float and double. Exact sizes can depend
+on the implementation. Use sizeof(type) to inspect a type's size.
+
+4. Output with printf
+    int age = 20;
+    printf("Age = %d\n", age);
+    printf("Price = %.2f\n", 12.5);
+
+Common format specifiers:
+- %d: int.
+- %f: floating-point value in printf (float arguments are promoted to double).
+- %c: character.
+- %s: null-terminated string.
+- %lf: double in scanf; printf uses %f for double.
+
+Always make sure format specifiers match the argument types.
+
+5. Input with scanf
+    int age;
+    printf("Enter age: ");
+    if (scanf("%d", &age) == 1) {
+        printf("Age: %d\n", age);
+    } else {
+        printf("Invalid input\n");
+    }
+
+The & operator supplies the address of the variable for scanf. Check scanf's
+return value to confirm that input was read successfully. For reading lines
+of text, fgets is often safer than an unbounded %s conversion.
+
+6. Conditional statements
+    int marks = 75;
+    if (marks >= 90) {
+        printf("A grade\n");
+    } else if (marks >= 60) {
+        printf("Pass\n");
+    } else {
+        printf("Try again\n");
+    }
+
+7. for loop
+    for (int i = 1; i <= 5; i++) {
+        printf("%d\n", i);
+    }
+
+8. while loop
+    int i = 1;
+    while (i <= 5) {
+        printf("%d\n", i);
+        i++;
+    }
+
+9. Functions
+    #include <stdio.h>
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int main(void) {
+        printf("%d\n", add(10, 20));
+        return 0;
+    }
+
+A function declaration (prototype) tells the compiler about a function's
+name, return type and parameters before its use when needed.
+
+10. Arrays
+    int numbers[3] = {10, 20, 30};
+    printf("%d\n", numbers[0]);
+
+C arrays have fixed size in their declaration. C does not automatically
+check array bounds. Accessing outside an array is undefined behavior.
+
+11. Strings
+    #include <stdio.h>
+    #include <string.h>
+
+    int main(void) {
+        char name[] = "Ravi";
+        printf("%s\n", name);
+        printf("%zu\n", strlen(name));
+        return 0;
+    }
+
+A C string is a sequence of characters terminated by the null character '\0'.
+The array must have enough space for all characters plus the terminator.
+
+12. Pointers
+    int value = 10;
+    int *ptr = &value;
+    printf("%d\n", *ptr);
+
+& obtains an object's address. * dereferences a pointer to access the object
+it points to. Only dereference a valid pointer to a live object.
+
+13. Structures
+    struct Student {
+        int id;
+        char grade;
+    };
+
+    int main(void) {
+        struct Student s = {101, 'A'};
+        printf("%d %c\n", s.id, s.grade);
+        return 0;
+    }
+
+A structure groups related members, which can have different types.
+
+14. Dynamic memory allocation
+    #include <stdlib.h>
+
+    int *numbers = malloc(5 * sizeof *numbers);
+    if (numbers != NULL) {
+        numbers[0] = 10;
+        free(numbers);
+        numbers = NULL;
+    }
+
+malloc allocates memory and returns NULL if allocation fails. Release
+successfully allocated memory with free when it is no longer needed.
+Do not use a pointer after freeing its allocation.
+
+15. File handling
+    #include <stdio.h>
+
+    int main(void) {
+        FILE *file = fopen("notes.txt", "w");
+        if (file == NULL) {
+            perror("Could not open file");
+            return 1;
+        }
+
+        fprintf(file, "Hello from C\n");
+        fclose(file);
+        return 0;
+    }
+
+Common modes include "r" (read), "w" (write/replace), and "a" (append).
+Check whether fopen returns NULL and close files when finished.
+
+16. Common C errors and risks
+- expected ';': a statement may be missing a semicolon.
+- undeclared identifier: a name has not been declared or is misspelled.
+- undefined reference: a required function or object was not linked.
+- segmentation fault: often caused by invalid memory access; inspect pointers
+  and array indexes. The exact cause must be diagnosed.
+- uninitialized variable: a local variable may contain an indeterminate value.
+- memory leak: allocated memory was not released when no longer needed.
+- buffer overflow: code wrote beyond the available storage.
+- format mismatch: printf/scanf format specifiers do not match argument types.
+
+17. Compile and run with GCC
+    gcc -std=c11 -Wall -Wextra -pedantic main.c -o main
+    ./main
+
+On Windows, the executable may be main.exe:
+    gcc -std=c11 -Wall -Wextra -pedantic main.c -o main.exe
+    main.exe
+
+Compiler commands vary by operating system and installed compiler.
+
+============================================================
+SECTION 5 — LANGUAGE COMPARISON
+============================================================
+
+Print output:
+Python: print("Hello")
+Java:   System.out.println("Hello");
+C:      printf("Hello\n");
+
+Declare an integer:
+Python: number = 10
+Java:   int number = 10;
+C:      int number = 10;
+
+Condition:
+Python:
+    if x > 0:
+        print("Positive")
+
+Java:
+    if (x > 0) {
+        System.out.println("Positive");
+    }
+
+C:
+    if (x > 0) {
+        printf("Positive\n");
+    }
+
+Counted loop:
+Python:
+    for i in range(5):
+        print(i)
+
+Java:
+    for (int i = 0; i < 5; i++) {
+        System.out.println(i);
+    }
+
+C:
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
+
+Important differences:
+- Python uses indentation to define code blocks and is dynamically typed.
+- Java uses braces for blocks, has static typing and runs on the JVM.
+- C uses braces for blocks, has static typing and gives programmers explicit
+  control over memory through pointers and allocation functions.
+- Python lists and Java collections provide dynamic collection options.
+- C arrays do not automatically track their length when passed to functions.
+
+============================================================
+SECTION 6 — BASIC PRACTICE QUESTIONS
+============================================================
+
+Beginner:
+1. Print "Hello, World!" in Python, Java and C.
+2. Read two numbers and print their sum.
+3. Check whether a number is even or odd.
+4. Find the largest of three numbers.
+5. Print numbers from 1 to 10.
+6. Calculate the factorial of a positive integer.
+7. Reverse a string.
+8. Check whether a word is a palindrome.
+9. Find the largest value in an array or list.
+10. Count vowels in a string.
+
+Intermediate:
+1. Implement linear search.
+2. Implement binary search on a sorted array.
+3. Sort a collection of numbers.
+4. Count the frequency of each character in text.
+5. Create a student record using a class or structure.
+6. Read and write a text file.
+7. Handle invalid user input.
+8. Explain the time complexity of a nested loop.
+9. Use functions to split a program into reusable parts.
+10. Demonstrate inheritance in Java.
+
+============================================================
+SECTION 7 — GUIDANCE FOR THE CHATBOT
+============================================================
+
+When answering a programming question:
+1. Identify the requested programming language.
+2. Explain the idea in simple language.
+3. Provide a complete, runnable example when appropriate.
+4. Use the correct code fence: python, java or c.
+5. Explain important lines of code.
+6. Mention expected output for examples when useful.
+7. For errors, explain the likely cause and show a corrected example.
+8. Do not invent compiler output or claim that code was tested unless it
+   was actually executed.
+9. If a question depends on an operating system, compiler or library version,
+   ask for that detail or state the assumption.
+10. Prefer safe practices: validate input, check file operations, avoid
+    invalid memory access, and handle errors appropriately.
+
+END OF KNOWLEDGE BASE
