@@ -9,7 +9,8 @@ st.set_page_config(
 )
 
 st.title("💻 Programming AI Assistant")
-st.caption("Ask questions about Python, Java and C     created by harshiiii")
+st.caption("Ask questions about Python, Java and C")
+st.caption("created by "MADDYYYYYYYY" ")
 
 # Connect to Groq
 try:
